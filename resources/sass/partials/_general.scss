@@ -1,0 +1,14 @@
+.main-container{
+    display: flex;
+    height: 100vh;
+}
+
+.sidebar{
+    padding: 1rem;
+}
+
+main{
+    flex-grow: 1;
+    padding: 1rem;
+}
+
