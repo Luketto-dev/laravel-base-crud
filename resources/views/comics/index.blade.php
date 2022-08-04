@@ -3,6 +3,7 @@
 @section('page_title', 'Lista Comics')
 
 @section('page_content')
+<div class="container">
     <table class="table">
         <thead>
             <tr>
@@ -37,6 +38,7 @@
         @endforeach
         </tbody>
     </table>
+</div>
     <div class="text-center py-3">
         <a href="{{ route('comics.create') }}" class="btn btn-primary">Aggiungi Fumetto</a>
     </div>

@@ -3,6 +3,7 @@
 @section('page_title', 'Aggiungi un nuovo fumetto')
 
 @section('page_content')
+<div class="container">
 <form class="row g-3" action="{{ Route('comics.store')}}" method="post">
     @csrf
     <div class="col-md-6">
@@ -42,4 +43,5 @@
         <a href="{{ route('comics.index') }}" class="btn btn-secondary">Annulla</a>
     </div>
 </form>
+</div>
 @endsection

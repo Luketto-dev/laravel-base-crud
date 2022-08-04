@@ -3,6 +3,7 @@
 @section('page_title', 'Modifica fumetto #' . $comic->id )
 
 @section('page_content')
+<div class="container">
 <form class="row g-3" action="{{ Route('comics.update', $comic->id)}}" method="post">
     @csrf
     @method('PATCH')
@@ -31,7 +32,7 @@
         <input type="date" class="form-control" value="{{$comic->sale_date}}" name="sale_date" id="inputData">
     </div>
     <div class="col-md-4">
-        <label for="inputState" class="form-label">State</label>
+        <label for="inputState" class="form-label">Genere</label>
         <select id="inputState" name="type" class="form-select">
             <option {{$comic->type == 'comic book' ? 'selected' : ''}}>comic book</option>
             <option {{$comic->type == 'graphic novel' ? 'selected' : ''}}>graphic novel</option>
@@ -42,4 +43,5 @@
         <a href="{{ route('comics.index') }}" class="btn btn-secondary">Annulla</a>
     </div>
 </form>
+</div>
 @endsection
