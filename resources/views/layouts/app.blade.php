@@ -12,8 +12,9 @@
     <div class="main-container">
         @include('partials.sidebar')
 
-        <main>
-            <h2>@yield('page_title')</h2>
+        <main class="p-1">
+            <div class="fs-3 fw-bold text-center">@yield('page_title')</div>
+            <hr>
 
             <div class="main-scroll-container">
                 @yield('page_content')

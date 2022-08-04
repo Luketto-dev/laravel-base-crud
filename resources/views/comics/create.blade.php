@@ -30,7 +30,7 @@
         <input type="date" class="form-control" name="sale_date" id="inputData">
     </div>
     <div class="col-md-4">
-        <label for="inputState" class="form-label">State</label>
+        <label for="inputState" class="form-label">Genere</label>
         <select id="inputState" name="type" class="form-select">
             <option selected>Scegli</option>
             <option>comik book</option>
@@ -39,6 +39,7 @@
     </div>
     <div class="col-12">
         <button type="submit" class="btn btn-primary">salva</button>
+        <a href="{{ route('comics.index') }}" class="btn btn-secondary">Annulla</a>
     </div>
 </form>
 @endsection

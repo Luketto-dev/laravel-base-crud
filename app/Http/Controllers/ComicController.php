@@ -63,7 +63,16 @@ class ComicController extends Controller
      */
     public function show($id)
     {
-        //
+        // leggo i dati associati all'id ricevuto
+        $comic = Comic::findOrFail($id);
+
+        // Dietro le quinte il find fa questo
+        // $comic = Comic::where("id", $id)->first();
+
+        // ritorniamo la view dello show
+        return view("comics.show", [
+            "comic" => $comic
+        ]);
     }
 
     /**
@@ -74,7 +83,11 @@ class ComicController extends Controller
      */
     public function edit($id)
     {
-        //
+        $comic = Comic::findOrFail($id);
+
+        return view("comics.edit", [
+            "comic" => $comic
+        ]);
     }
 
     /**
@@ -86,7 +99,17 @@ class ComicController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $comic = Comic::findOrFail($id);
+
+        $data = $request->all();
+
+        /* $faq->title = $data["title"];
+        $faq->text = $data["text"];
+        $faq->save(); */
+
+        $comic->update($data);
+
+        return redirect()->route("comics.show", $comic->id);
     }
 
     /**
@@ -97,6 +120,10 @@ class ComicController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $comic = Comic::findOrFail($id);
+
+        $comic->delete();
+
+        return redirect()->route("comics.index");
     }
 }
